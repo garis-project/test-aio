@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var input = 237000;
+      var pecahan = [100000, 50000, 20000, 10000, 5000, 2000, 1000];
+
+      var result=hitung(input);
+      console.log(result);
+
+      function hitung(input, output = [], i = 0) {
+        if (i > pecahan.length) {
+            return output;
+        }
+        let hasil = parseInt(input / pecahan[i]);
+        let sisa = input-(hasil*pecahan[i]);
+
+        output.push({ pecahan: pecahan, nilai: hasil });
+        return hitung(sisa,output,++i);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var input = 32;
+      var min = 21;
+      var max = 24;
+      let a = tonase(input, min, max);
+      console.log(a);
+      function tonase(input, min, max, i = 1) {
+        min = min * i;
+        max = max * i;
+        if (input < min) {
+          return "Tonase harus " + min + " - " + max;
+        } else if (input >= min && input <= max) {
+          return "Tonase sesuai sesuai " + min + " - " + max;
+        } else {
+          return tonase(input, min, max, ++i);
+        }
+      }
+    </script>
+  </body>
+</html>

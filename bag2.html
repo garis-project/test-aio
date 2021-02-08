@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array_lama = [{
+                code: "1362536237",
+                name: "PT Lorem Ipsum"
+            },
+            {
+                code: "1362536237",
+                name: "PT Lorem"
+            }
+        ];
+        var array_baru = [];
+        array_lama.forEach(e => {
+            let customer = e.code + " - " + e.name;
+            array_baru.push({
+                code: e.code,
+                customer: customer,
+                name: e.name
+            });
+        });
+
+        console.log(array_baru);
+    </script>
+</body>
+
+</html>
