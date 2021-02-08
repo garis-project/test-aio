@@ -53,7 +53,7 @@
         console.log(resIrisan);
         let resGabungan = gabungan(a, b);
         console.log(resGabungan);
-        let resKosong= gabungan(a, b);
+        let resKosong = kosong(a, b);
         console.log(resKosong);
 
         function irisan(a, b) {
@@ -80,13 +80,16 @@
         function kosong(a, b) {
             let c = [];
             a.forEach(a => {
+                let res = true;
                 b.forEach(b => {
                     if (a.code == b.code) {
-                        c.push(a);
+                        res = res && false;
                     }
                 });
+                if (res == true) {
+                    c.push(a);
+                }
             });
-
             return c;
         }
     </script>
