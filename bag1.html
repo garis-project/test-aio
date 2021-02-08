@@ -1,48 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <script>
-      var a = [
-        { code: "M", nama: "Mango" },
-        { code: "A", nama: "Apple" },
-        { code: "Me", nama: "Melon" },
-        { code: "O", nama: "Orange" },
-        { code: "P", nama: "Pineapple" },
-      ];
-      var b = [
-        { code: "M", nama: "Mango" },
-        { code: "P", nama: "Pineapple" },
-        { code: "Me", nama: "Melon" },
-        { code: "Pe", nama: "Pears" },
-      ];
+        var a = [{
+                code: "M",
+                nama: "Mango"
+            },
+            {
+                code: "A",
+                nama: "Apple"
+            },
+            {
+                code: "Me",
+                nama: "Melon"
+            },
+            {
+                code: "O",
+                nama: "Orange"
+            },
+            {
+                code: "P",
+                nama: "Pineapple"
+            },
+        ];
+        var b = [{
+                code: "M",
+                nama: "Mango"
+            },
+            {
+                code: "P",
+                nama: "Pineapple"
+            },
+            {
+                code: "Me",
+                nama: "Melon"
+            },
+            {
+                code: "Pe",
+                nama: "Pears"
+            },
+        ];
 
-      console.log(a);
-      console.log(b);
-function irisan(a,b){
-    let c=[];
-a.forEach(a => {
-    b.forEach(b => {
-    if(a.code==b.code){
+        let resIrisan = irisan(a, b);
+        console.log(resIrisan);
+        let resGabungan = gabungan(a, b);
+        console.log(resGabungan);
+        let resKosong= gabungan(a, b);
+        console.log(resKosong);
 
-    }else{
-        
-    }
-});
-});
-}
+        function irisan(a, b) {
+            let c = [];
+            a.forEach(a => {
+                b.forEach(b => {
+                    if (a.code == b.code) {
+                        c.push(a);
+                    }
+                });
+            });
 
-      var array_lama=[
-          {code:"1362536237",name:"PT Lorem Ipsum"},
-          {code:"1362536237",name:"PT Lorem"}
-      ];
+            return c;
+        }
 
+        function gabungan(a, b) {
 
+            b.forEach(b => {
+                a.push(b);
+            });
+            return a;
+        }
+
+        function kosong(a, b) {
+            let c = [];
+            a.forEach(a => {
+                b.forEach(b => {
+                    if (a.code == b.code) {
+                        c.push(a);
+                    }
+                });
+            });
+
+            return c;
+        }
     </script>
-  </body>
+</body>
+
 </html>
